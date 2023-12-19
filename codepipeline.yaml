@@ -94,7 +94,6 @@ Parameters:
 Conditions:
   IsMainBranchPipeline: !Equals [!Ref FeatureGitBranch, ""]
   IsFeatureBranchPipeline: !Not [Condition: IsMainBranchPipeline]
-  CreateConnection: !Equals [!Ref CodeStarConnectionArn, ""]
 
 Resources:
   # |  _ \(_)_ __   ___| (_)_ __   ___
