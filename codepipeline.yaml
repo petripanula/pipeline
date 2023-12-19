@@ -24,7 +24,7 @@ Description: >
 # sam deploy -t codepipeline.yaml --stack-name <stack-name> --capabilities=CAPABILITY_IAM \
 #   --parameter-overrides="FeatureGitBranch=<branch-name> CodeStarConnectionArn=<codestar-connection-arn>"
 # ```
-#
+
 
 Parameters:
   GitHubOAuthToken:
