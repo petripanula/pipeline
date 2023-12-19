@@ -70,7 +70,7 @@ Parameters:
     # Update the line below with image repository URL and add "--image-repository ${PROD_IMAGE_REPOSITORY}" to
     # prod "sam package" and "sam deploy" commands in buildspec files (in pipeline/).
     Default: ""
-   FeatureGitBranch:
+  FeatureGitBranch:
     Type: String
     Default: ""
 
