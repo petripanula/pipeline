@@ -39,7 +39,7 @@ Parameters:
   GitHubRepo:
     Description: GitHub repo name
     Type: String
-    Default: 'pete'
+    Default: 'pipeline'
   GitHubBranch:
     Description: GitHub repo branch name. It defaults to master if not specified.
     Type: String
@@ -49,7 +49,7 @@ Parameters:
     Default: "GitHub"
   FullRepositoryId:
     Type: String
-    Default: "petripanula/pete"
+    Default: "petripanula/pipeline"
   MainGitBranch:
     Type: String
     Default: "main"
@@ -150,7 +150,7 @@ Resources:
               Configuration:
                 Owner:
                   Ref: GitHubOwner
-                OAuthToken: '{{resolve:secretsmanager:petenfinetoken:SecretString:token}}'
+                OAuthToken: '{{resolve:secretsmanager:PetenToken:SecretString:petentoken}}'
                 Repo:
                   Ref: GitHubRepo
                 Branch:
