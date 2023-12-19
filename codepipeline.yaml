@@ -150,8 +150,7 @@ Resources:
               Configuration:
                 Owner:
                   Ref: GitHubOwner
-                OAuthToken:
-                  Ref: GitHubOAuthToken
+                OAuthToken: '{{resolve:secretsmanager:petenfinetoken:SecretString:token}}'
                 Repo:
                   Ref: GitHubRepo
                 Branch:
