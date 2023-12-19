@@ -10,7 +10,6 @@ Description: >
 # To deploy this template and connect to the main git branch, run this against the leading account:
 # `sam deploy -t codepipeline.yaml --stack-name <stack-name> --capabilities=CAPABILITY_IAM`.
 
-
 Parameters:
   GitHubOAuthToken:
     Description: OAuth token used by AWS CodePipeline to connect to GitHub
@@ -29,18 +28,6 @@ Parameters:
     Description: GitHub repo branch name. It defaults to master if not specified.
     Type: String
     Default: main
-  GitProviderType:
-    Type: String
-    Default: "GitHub"
-  FullRepositoryId:
-    Type: String
-    Default: "petripanula/pipeline"
-  MainGitBranch:
-    Type: String
-    Default: "main"
-  SamTemplate:
-    Type: String
-    Default: "template.yaml"
   TestingRegion:
     Type: String
     Default: "eu-north-1"
@@ -83,11 +70,7 @@ Parameters:
     # Update the line below with image repository URL and add "--image-repository ${PROD_IMAGE_REPOSITORY}" to
     # prod "sam package" and "sam deploy" commands in buildspec files (in pipeline/).
     Default: ""
-  # CodeStarConnectionArn and FeatureGitBranch are required for pipelines for feature branches
-  CodeStarConnectionArn:
-    Type: String
-    Default: ""
-  FeatureGitBranch:
+   FeatureGitBranch:
     Type: String
     Default: ""
 
@@ -147,8 +130,7 @@ Resources:
                 Capabilities: CAPABILITY_NAMED_IAM
                 ParameterOverrides: !Sub |
                   {
-                    "FeatureGitBranch": "${FeatureGitBranch}",
-                    "CodeStarConnectionArn": "${CodeStarConnectionArn}"
+                    "FeatureGitBranch": "${FeatureGitBranch}"
                   }
               InputArtifacts:
                 - Name: SourceCodeAsZip
@@ -411,8 +393,6 @@ Resources:
         Image: aws/codebuild/amazonlinux2-x86_64-standard:3.0
         PrivilegedMode: true
         EnvironmentVariables:
-          - Name: SAM_TEMPLATE
-            Value: !Ref SamTemplate
           - Name: TESTING_REGION
             Value: !Ref TestingRegion
           - Name: PROD_REGION
