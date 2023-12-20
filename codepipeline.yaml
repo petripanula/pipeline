@@ -412,5 +412,5 @@ Resources:
       ServiceRole: !GetAtt CodeBuildServiceRole.Arn
       Source:
         Type: CODEPIPELINE
-        BuildSpec: pipeline/buildspec_build_package.yml
+        BuildSpec: testing/pipeline/buildspec_build_package.yml
 
