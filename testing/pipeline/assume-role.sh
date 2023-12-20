@@ -20,4 +20,6 @@ SECRET_ACCESS_KEY=$(echo "$cred" | awk '{ print $2 }')
 export AWS_SECRET_ACCESS_KEY=$SECRET_ACCESS_KEY
 
 SESSION_TOKEN=$(echo "$cred" | awk '{ print $3 }')
+echo "SESSION_TOKEN:"
+echo "$SESSION_TOKEN"
 export AWS_SESSION_TOKEN=$SESSION_TOKEN
