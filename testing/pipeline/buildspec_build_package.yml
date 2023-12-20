@@ -14,7 +14,9 @@ phases:
       - echo "We will build here......"
       #- sam build --use-container --template ${SAM_TEMPLATE}
       - ls
+      - env
       - testing/pipeline/assume-role.sh ${TESTING_PIPELINE_EXECUTION_ROLE} test-package
+      - env
       #- sam package --s3-bucket ${TESTING_ARTIFACT_BUCKET}
       #              --region ${TESTING_REGION}
       #              --output-template-file packaged-test.yaml
@@ -24,5 +26,5 @@ phases:
       #              --output-template-file packaged-prod.yaml
 artifacts:
   files:
-    - assume-role.sh
-    - pipeline/*
+    - testing/pipeline/assume-role.sh
+    - testing/pipeline/*
