@@ -13,7 +13,7 @@ phases:
     commands:
       - echo "We will build here......"
       #- sam build --use-container --template ${SAM_TEMPLATE}
-      ls
+      - ls
       - testing/pipeline/assume-role.sh ${TESTING_PIPELINE_EXECUTION_ROLE} test-package
       #- sam package --s3-bucket ${TESTING_ARTIFACT_BUCKET}
       #              --region ${TESTING_REGION}
