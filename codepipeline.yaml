@@ -398,7 +398,7 @@ Resources:
           - Name: PROD_REGION
             Value: !Ref ProdRegion
           - Name: TESTING_PIPELINE_EXECUTION_ROLE
-            Value: arn:aws:iam::${AWS::AccountId}:role/aws-sam-cli-managed-test-pipe-PipelineExecutionRole-LgX9uJ0hHoMp
+            Value: !Sub "arn:aws:iam::${AWS::AccountId}:role/aws-sam-cli-managed-test-pipe-PipelineExecutionRole-LgX9uJ0hHoMp"
           - Name: PROD_PIPELINE_EXECUTION_ROLE
             Value: !Ref ProdPipelineExecutionRole
           - Name: TESTING_ARTIFACT_BUCKET
