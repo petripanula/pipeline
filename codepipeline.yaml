@@ -36,10 +36,10 @@ Parameters:
     Default: "baltice-test"
   TestingPipelineExecutionRole:
     Type: String
-    Default: "arn:aws:iam::${AWS::AccountId}:role/aws-sam-cli-managed-test-pipe-PipelineExecutionRole-LgX9uJ0hHoMp"
+    Default: !Sub "arn:aws:iam::${AWS::AccountId}:role/aws-sam-cli-managed-test-pipe-PipelineExecutionRole-LgX9uJ0hHoMp"
   TestingCloudFormationExecutionRole:
     Type: String
-    Default: "arn:aws:iam::${AWS::AccountId}:role/aws-sam-cli-managed-test--CloudFormationExecutionRo-S9qpaJkvzc2Z"
+    Default: !Sub "arn:aws:iam::${AWS::AccountId}:role/aws-sam-cli-managed-test--CloudFormationExecutionRo-S9qpaJkvzc2Z"
   TestingArtifactBucket:
     Type: String
     Default: "aws-sam-cli-managed-test-pipeline--artifactsbucket-2tirry5uycqp"
@@ -57,10 +57,10 @@ Parameters:
     Default: "baltice-dev"
   ProdPipelineExecutionRole:
     Type: String
-    Default: "arn:aws:iam::${AWS::AccountId}:role/aws-sam-cli-managed-dev-pipel-PipelineExecutionRole-o3zk7stTNOGS"
+    Default: !Sub "arn:aws:iam::${AWS::AccountId}:role/aws-sam-cli-managed-dev-pipel-PipelineExecutionRole-o3zk7stTNOGS"
   ProdCloudFormationExecutionExeRole:
     Type: String
-    Default: "arn:aws:iam::${AWS::AccountId}:role/aws-sam-cli-managed-dev-p-CloudFormationExecutionRo-iTm5odMGXL33"
+    Default: !Sub "arn:aws:iam::${AWS::AccountId}:role/aws-sam-cli-managed-dev-p-CloudFormationExecutionRo-iTm5odMGXL33"
   ProdArtifactBucket:
     Type: String
     Default: "aws-sam-cli-managed-dev-pipeline-r-artifactsbucket-ck0lvwlf9kkc"
