@@ -400,7 +400,7 @@ Resources:
           - Name: TESTING_PIPELINE_EXECUTION_ROLE
             Value: !Sub "arn:aws:iam::${AWS::AccountId}:role/aws-sam-cli-managed-test-pipe-PipelineExecutionRole-LgX9uJ0hHoMp"
           - Name: PROD_PIPELINE_EXECUTION_ROLE
-            Value: !Ref ProdPipelineExecutionRole
+            Value: !Sub "arn:aws:iam::${AWS::AccountId}:role/aws-sam-cli-managed-dev-pipel-PipelineExecutionRole-o3zk7stTNOGS"
           - Name: TESTING_ARTIFACT_BUCKET
             Value: !Ref TestingArtifactBucket
           - Name: PROD_ARTIFACT_BUCKET
